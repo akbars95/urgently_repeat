@@ -7,24 +7,25 @@ public class JavaStaticMethodsCannotOverride {
 
     public static void main(String[] args) {
         Country countries[] = new Country[]{new Country(), new City(), new Country()};
-        for(Country country : countries){
-
+        for (Country country : countries) {
+            country.getName();
         }
+        new City().getName();
     }
 
 }
 
-class Country{
+class Country {
 
-    public void getName(){
+    public static void getName() {
         System.out.println("Moldova");
     }
 
 }
 
-class City extends Country{
+class City extends Country {
 
-    public void getName(){
+    public static void getName() {
         System.out.println("Kishinev");
     }
 
