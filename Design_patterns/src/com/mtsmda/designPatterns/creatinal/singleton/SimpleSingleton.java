@@ -1,4 +1,4 @@
-package com.mtsmda.designPatterns.singleton;
+package com.mtsmda.designPatterns.creatinal.singleton;
 /**
  * simple singleton with lazy loading
  * */
