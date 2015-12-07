@@ -5,3 +5,5 @@
 *.class
 .idea
 *.iml
+*.lst
+surefire-reports
