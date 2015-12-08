@@ -1,12 +1,15 @@
 package com.mtsmda.jUnit;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import static org.junit.Assert.*;
 
 /**
  * Created by c-DMITMINZ on 07.12.2015.
  */
+@FixMethodOrder(value = MethodSorters.NAME_ASCENDING)
 public class AssertTestMethods {
 
     /**
