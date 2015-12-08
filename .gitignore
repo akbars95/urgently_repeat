@@ -7,3 +7,4 @@
 *.iml
 *.lst
 surefire-reports
+classes
