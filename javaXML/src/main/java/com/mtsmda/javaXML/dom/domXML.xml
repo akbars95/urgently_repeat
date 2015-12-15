@@ -1,0 +1,14 @@
+You should use a DOM parser when:
+
+        You need to know a lot about the structure of a document
+
+        You need to move parts of the document around (you might want to sort certain elements, for example)
+
+        You need to use the information in the document more than once
+
+        What you get?
+
+        When you parse an XML document with a DOM parser, you get back a tree structure that contains all of the elements of your document. The DOM provides a variety of functions you can use to examine the contents and structure of the document.
+        Advantages
+
+        The DOM is a common interface for manipulating document structures. One of its design goals is that Java code written for one DOM-compliant parser should run on any other DOM-compliant parser without changes.

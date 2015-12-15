@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <books>
+        <book id="1">
+            <bookname>Java 8</bookname>
+            <bookauthor>Gerbert SHild</bookauthor>
+            <bookisbn>1532359255</bookisbn>
+            <bookprice currency="$">150.5</bookprice>
+            <bookdescription>
+                <![CDATA[
+                This is book about new Java version 8, this is latest version JDK 1.8 update 45
+                ]]>
+            </bookdescription>
+        </book>
+
+        <book id="2">
+            <bookname>Java 7</bookname>
+            <bookauthor>Gerbert SHild</bookauthor>
+            <bookisbn>155659255</bookisbn>
+            <bookprice currency="€">75</bookprice>
+            <bookdescription>
+                <![CDATA[
+                This is book about new Java version 7
+                ]]>
+            </bookdescription>
+        </book>
+    </books>
+</library>

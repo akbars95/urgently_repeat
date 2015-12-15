@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<programmer>
+    <programmingLanguages>
+        <languageName>Java</languageName>
+        <languageName>C#</languageName>
+        <languageName>PHP</languageName>
+    </programmingLanguages>
+
+    <database>
+        <databaseName>MySQL</databaseName>
+        <databaseName>SQL Server</databaseName>
+        <databaseName>SQLite</databaseName>
+    </database>
+</programmer>

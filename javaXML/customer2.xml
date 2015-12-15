@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<customer number="300">
+    <email-addresses>
+        <email-address>ivan.ivanov@gmail.com</email-address>
+        <email-address>petrov.petr@gmail.com</email-address>
+    </email-addresses>
+    <countEmails>15 19</countEmails>
+</customer>

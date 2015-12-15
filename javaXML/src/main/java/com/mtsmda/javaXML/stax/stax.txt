@@ -1,0 +1,18 @@
+StAX
+
+The Java StAX API is a streaming API for reading and writing XML streams. As such it resembles the older SAX API, except that the SAX API can only be used to read XML, not write it.
+
+The main difference between the SAX and StAX API is that when using SAX you provide a handler to the SAX parser. This handler then has methods called on it, corresponding to the entitites (elements, comments, text etc.) found in the XML document. It is the SAX parser that controls the iteration through the XML document. With the StAX parser you control the iteration through the XML document. You call the next() method (or corresponding method) when you feel you are ready to process the next element, text node etc. From the next() method you obtain an object that can tell you what entity you have met in the XML document.
+
+Controlling the iteration through the XML document like this can be an advantage. The iteration can be kept within the scope of one method (perhaps calling submethods). This means that you can use / access the same local variables when processing a piece of text, as when processing an element. With SAX, these two entities are handled by two different methods in your handler object. Thus, if you need to access shared variables from these different methods, these variables has to be member variables in the handler object. Not a huge difference, but local variables may still be preferable in many situations.
+
+The StAX API interfaces comes with Java 6, but there is yet no implementation. A standard implementation can be found at stax.codehaus.org.
+
+ The StAX Java API for XML processing is designed for parsing XML streams, just like the SAX API's. The main differences between the StAX and SAX API's are:
+
+    StAX is a "pull" API. SAX is a "push" API.
+    StAX can do both XML reading and writing. SAX can only do XML reading.
+
+It is pretty obvious what the difference between a "read + write" capable API vs. a "read" capable API is. But the difference between a "pull" and a "push" style API is less obvious, so I'll talk a little about that. For a more feature-by-feature type comparison of SAX and StAX, see the text SAX vs. StAX.
+
+NOTE: This text uses SVG (Scalable Vector Graphics) diagrams. If you are using Internet Explorer you will need the Adobe SVG Plugin do display these diagrams. Firefox 3.0.5+ users and Google Chrome users should have no problems.

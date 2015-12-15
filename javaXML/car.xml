@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<garage>
+    <cars>
+        <car number="1009">
+            <marka>audi</marka>
+            <model>Q7</model>
+            <year>2009</year>
+            <price>45000.0</price>
+        </car>
+        <car number="10459">
+            <marka>BMW</marka>
+            <model>X6</model>
+            <year>2015</year>
+            <price>100000.0</price>
+        </car>
+    </cars>
+</garage>
