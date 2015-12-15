@@ -1,7 +1,11 @@
 package com.mtsmda.java7Book.ch8.resourceBundle;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
 import java.util.ListResourceBundle;
 import java.util.Locale;
+import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
 /**
@@ -10,24 +14,13 @@ import java.util.ResourceBundle;
 public class JavaResourceBundleSaveInJavaCode {
 
     public static void main(String[] args) {
-        Locale localeRu = new Locale("ru", "RU");
+        Locale localeRu = new Locale("de", "DE");
         System.out.println(localeRu);
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("com.mtsmda.java7Book.ch8.resourceBundle.Message_ru_RU", localeRu);
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("com.mtsmda.java7Book.ch8.resourceBundle.Message", localeRu);
+        System.out.println(resourceBundle.getObject("bicycle"));
+        localeRu = new Locale("ru");
+        resourceBundle = ResourceBundle.getBundle("com.mtsmda.java7Book.ch8.resourceBundle.Message", localeRu);
         System.out.println(resourceBundle.getObject("bicycle"));
     }
 
-}
-
-class Message_ru_RU extends ListResourceBundle{
-
-    @Override
-    protected Object[][] getContents() {
-        return new Object[][]{
-            {"hello", "Привет"},
-                {"car", "Машина"},
-                {"bicycle", "велосипед"},
-                {"milk", "Молоко"},
-                {"bread", "Хлеб"}
-        };
-    }
 }
