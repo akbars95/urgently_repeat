@@ -1,7 +1,9 @@
 package com.mtsmda.javaXML.jaxb;
 
 import javax.xml.bind.annotation.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by c-DMITMINZ on 15.12.2015.
@@ -16,6 +18,8 @@ public class Customer {
 
     @XmlList
     private List<Integer> countEmails;
+
+    private Map<String, Integer> priceList = new HashMap<String, Integer>();
 
     @XmlAttribute
     private Integer number;
@@ -49,5 +53,13 @@ public class Customer {
 
     public void setNumber(Integer number) {
         this.number = number;
+    }
+
+    public Map<String, Integer> getPriceList() {
+        return priceList;
+    }
+
+    public void setPriceList(Map<String, Integer> priceList) {
+        this.priceList = priceList;
     }
 }

@@ -1,0 +1,5 @@
+JAXB
+
+JAXB is an API that resembles the DOM API. JAXB lets you generate classes from an XSL Schema, matching the XML document defined in that schema. JAXB then lets you read an XML document conforming to that schema, into the an object structure built from the generated objects. You can also serialize that object structure back to disk or network.
+
+The generated JAXB classes looks more like regular domain objects. They have getters and setters with names matching the element names. The DOM API just has methods like addElement() etc. where the concrete element name is a parameter, and you need to know what elements can be added as children at any given element in the DOM structure. The JAXB generated clasess thus help you more, by reflecting the allowed structure in class and method names.

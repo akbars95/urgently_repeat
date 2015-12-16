@@ -1,0 +1,12 @@
+    Structure Definations - XPath defines the parts of an XML document like element, attribute, text, namespace, processing-instruction, comment, and document nodes
+
+    Path Expressions XPath provides powerful path expressions select nodes or list of nodes in XML documents.
+
+    Standard FunctionsXPath provides a rich library of standard functions for manipulation of string values, numeric values, date and time comparison, node and QName manipulation, sequence manipulation, Boolean values etc.
+
+    Major part of XSLTXPath is one of the major element in XSLT standard and is must have knowledge in order to work with XSLT documents.
+
+    W3C recommendationXPath is official recommendation of World Wide Web Consortium (W3C).
+
+
+Java comes with a built-in XPath evaluator. You set up an XPath expression, and have the evaluator evalute the expression on a DOM object. The evaluator then returns the elements matching the XPath expression. XPaths can be a handy way of finding the nodes you need to process, rather than navigate down to them yourself.

@@ -1,0 +1,7 @@
+The SAX parser is the first API for processing XML entity by entity (element, text, comments etc.) as they are met during traversal of the XML document. When you use a SAX parser you pass a handler object to the SAX parser. This handler object has a method for every "event" you want to handle, during the traversal of the XML document. Examples of events are startDocument, startElement, characters etc.
+
+        The SAX parser is mostly suited for processing XML documents where each element can be processed individually. Documents where you need access to earlier or later parts of the document, to process a given element, are not as easy to handle. Well, if you need access to earlier parts, you can store that earlier part when it occurs in a member variable in the handler object. But if you need access to later elements, this is kind of difficult. Unless you process the earlier elemements when the later elements needed are encountered. Yet, if you need to jump around the XML document when processing it, it might be easier to use a DOM parser.
+
+        In most cases where you find a SAX parser useful you may be better off using a StAX reader instead.
+
+        The SAX interfaces and implementation comes with Java (at least from Java 5).

@@ -5,4 +5,10 @@
         <email-address>petrov.petr@gmail.com</email-address>
     </email-addresses>
     <countEmails>15 19</countEmails>
+    <priceList>
+        <entry>
+            <key>milk</key>
+            <value>10</value>
+        </entry>
+    </priceList>
 </customer>

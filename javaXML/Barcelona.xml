@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<footballClub>
+<FootballClub>
     <city>Barcelona</city>
     <clubName>Barcelona</clubName>
     <countChampionWon>25</countChampionWon>
     <coutry>Spain</coutry>
     <leaderName>Leo Messi</leaderName>
-</footballClub>
+</FootballClub>

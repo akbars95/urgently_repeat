@@ -1,27 +1,26 @@
 package com.mtsmda.javaXML.jaxb;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by c-DMITMINZ on 15.12.2015.
  */
-@XmlRootElement
+@XmlRootElement(name = "FootballClub")
 public class FootballClub {
 
     private String clubName;
     private String coutry;
     private String city;
     private String leaderName;
-    private int countChampionWon;
+    private Integer countChampionWon;
 
     public FootballClub() {
 
     }
 
-    public FootballClub(String clubName, String coutry, String city, String leaderName, int countChampionWon) {
+    public FootballClub(String clubName, String coutry, String city, String leaderName, Integer countChampionWon) {
         this.clubName = clubName;
         this.coutry = coutry;
         this.city = city;
@@ -33,7 +32,7 @@ public class FootballClub {
         return clubName;
     }
 
-    /*@XmlElement*/
+    @XmlElement
     public void setClubName(String clubName) {
         this.clubName = clubName;
     }
@@ -42,7 +41,7 @@ public class FootballClub {
         return coutry;
     }
 
-    /*@XmlElement*/
+    @XmlElement
     public void setCoutry(String coutry) {
         this.coutry = coutry;
     }
@@ -51,7 +50,7 @@ public class FootballClub {
         return city;
     }
 
-    /*@XmlElement*/
+    @XmlElement
     public void setCity(String city) {
         this.city = city;
     }
@@ -60,17 +59,28 @@ public class FootballClub {
         return leaderName;
     }
 
-    /*@XmlElement*/
+    @XmlElement
     public void setLeaderName(String leaderName) {
         this.leaderName = leaderName;
     }
 
-    public int getCountChampionWon() {
+    public Integer getCountChampionWon() {
         return countChampionWon;
     }
 
-    /*@XmlElement*/
-    public void setCountChampionWon(int countChampionWon) {
+    @XmlElement
+    public void setCountChampionWon(Integer countChampionWon) {
         this.countChampionWon = countChampionWon;
+    }
+
+    @Override
+    public String toString() {
+        return "FootballClub{" +
+                "clubName='" + clubName + '\'' +
+                ", coutry='" + coutry + '\'' +
+                ", city='" + city + '\'' +
+                ", leaderName='" + leaderName + '\'' +
+                ", countChampionWon=" + countChampionWon +
+                '}';
     }
 }

@@ -1,4 +1,8 @@
-You should use a DOM parser when:
+The DOM (Document Object Model) parser parses an XML document into an object graph. The whole document is converted into one big objects. Once created you can traverse the object graph at will. You can walk up and down in the graph as you please. This object graph takes up a lot of memory, so this should only be used in situations where no other options are suitable.
+
+        The DOM interfaces and implementation comes with Java (at least from Java 5).
+
+        You should use a DOM parser when:
 
         You need to know a lot about the structure of a document
 
