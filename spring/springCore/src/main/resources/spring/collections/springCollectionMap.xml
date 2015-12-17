@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util.xsd">
+
+       <bean id="exampleMapFactoryBean" class="com.mtsmda.springCore.collections.ExampleMapFactoryBean">
+              <property name="stringStringMap">
+                     <bean class="org.springframework.beans.factory.config.MapFactoryBean">
+                            <property name="targetMapClass">
+                                   <value>java.util.LinkedHashMap</value>
+                            </property>
+                            <property name="sourceMap">
+                                   <map>
+                                          <entry key="google" value="google.com"/>
+                                          <entry key="mail" value="mail.ru"/>
+                                          <entry key="gmail.com" value="gmail.com"/>
+                                   </map>
+                            </property>
+                     </bean>
+              </property>
+       </bean>
+
+
+       <bean id="exampleMapFactoryBean2" class="com.mtsmda.springCore.collections.ExampleMapFactoryBean">
+              <property name="stringStringMap">
+                     <util:map map-class="java.util.HashMap">
+                            <entry key="milk" value="молоко"/>
+                            <entry key="car" value="машина"/>
+                     </util:map>
+              </property>
+       </bean>
+
+</beans>

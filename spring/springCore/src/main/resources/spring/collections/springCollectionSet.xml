@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util.xsd">
+
+       <bean id="exampleSetFactoryBean" class="com.mtsmda.springCore.collections.ExampleSetFactoryBean">
+              <property name="doubleSet">
+                     <bean class="org.springframework.beans.factory.config.SetFactoryBean">
+                            <property name="targetSetClass">
+                                   <value>java.util.HashSet</value>
+                            </property>
+                            <property name="sourceSet">
+                                   <list>
+                                          <value>1900.12</value>
+                                          <value>25.23</value>
+                                          <value>7.265</value>
+                                   </list>
+                            </property>
+                     </bean>
+              </property>
+       </bean>
+
+
+       <bean id="exampleSetFactoryBean2" class="com.mtsmda.springCore.collections.ExampleSetFactoryBean">
+              <property name="doubleSet">
+                     <util:set set-class="java.util.LinkedHashSet">
+                            <value>9.23</value>
+                            <value>315.22</value>
+                     </util:set>
+              </property>
+       </bean>
+
+</beans>

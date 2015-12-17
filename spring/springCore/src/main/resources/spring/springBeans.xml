@@ -8,6 +8,14 @@
 
     <import resource="springBeansDB.xml"/>
     <import resource="springBeanScope.xml"/>
+    <import resource="collections/springCollections.xml"/>
+    <import resource="collections/springCollectionList.xml"/>
+    <import resource="collections/springCollectionSet.xml"/>
+    <import resource="collections/springCollectionMap.xml"/>
+    <import resource="springBeansDate.xml"/>
+    <import resource="springBeansLinkPropertiesFiles.xml"/>
+
+    <import resource="inheritance/springBeansInheritance.xml"/>
 
     <context:component-scan base-package="com.mtsmda.springCore.beanScopes"/>
 

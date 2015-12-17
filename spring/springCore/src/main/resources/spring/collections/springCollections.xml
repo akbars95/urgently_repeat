@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="collections" class="com.mtsmda.springCore.collections.ExampleWithCollections">
+        <property name="genderPersons">
+            <list>
+                <value>m</value>
+                <value>j</value>
+                <value>m</value>
+                <value>j</value>
+                <value>m</value>
+                <value>j</value>
+                <value>m</value>
+                <value>m</value>
+                <value>j</value>
+            </list>
+        </property>
+
+        <property name="persons">
+            <set>
+                <bean class="com.mtsmda.springCore.Person">
+                    <property name="firstname">
+                        <value>Sidorov</value>
+                    </property>
+                    <property name="lastname" value="Sidor"/>
+                    <property name="middlename" value="Sidorovici">
+                    </property>
+                </bean>
+                <ref bean="personIonita"/>
+            </set>
+        </property>
+
+        <property name="productPrice">
+            <map>
+                <entry key="audi Q7">
+                    <value>70000</value>
+                </entry>
+                <entry key="opel astra" value="15000"/>
+                <entry key="BMW X6">
+                    <value>90000</value>
+                </entry>
+            </map>
+        </property>
+
+        <property name="propertiesDB">
+            <props>
+                <prop key="db.url">localhost:3306/myDB</prop>
+                <prop key="db.username">root</prop>
+                <prop key="db.password">root</prop>
+            </props>
+        </property>
+
+    </bean>
+
+    <bean id="personIonita" class="com.mtsmda.springCore.Person">
+        <property name="firstname">
+            <value>Ionita</value>
+        </property>
+        <property name="lastname" value="Ion"/>
+        <property name="middlename" value="Ionovic">
+        </property>
+    </bean>
+
+</beans>
