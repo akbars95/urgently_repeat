@@ -8,3 +8,5 @@
 *.lst
 surefire-reports
 classes
+maven-archiver
+target

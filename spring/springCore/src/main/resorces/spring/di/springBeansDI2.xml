@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="csvOutputGenerator" class="com.mtsmda.springCore.di.CSVOutputGenerator"/>
+       <bean id="jsonOutputGenerator" class="com.mtsmda.springCore.di.JSONOutputGenerator"/>
+       <bean id="xmlOutputGenerator" class="com.mtsmda.springCore.di.XMLOutputGenerator"/>
+
+       <bean id="fileOutputGeneratorCSV" class="com.mtsmda.springCore.di.FileOutputGenerator">
+              <property name="outputGenerator" ref="csvOutputGenerator"/>
+       </bean>
+
+       <bean id="fileOutputGeneratorXML" class="com.mtsmda.springCore.di.FileOutputGenerator">
+              <property name="outputGenerator" ref="xmlOutputGenerator"/>
+       </bean>
+
+</beans>
