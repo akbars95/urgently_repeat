@@ -19,6 +19,10 @@ public class RunMain {
 
         try {
             xMlConverter.convertFromObjectToXML(computer, "file.xml");
+            Object o = xMlConverter.convertFromXMLToObject("file.xml");
+            if(o instanceof Computer){
+                System.out.println(((Computer)o).toString());
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
