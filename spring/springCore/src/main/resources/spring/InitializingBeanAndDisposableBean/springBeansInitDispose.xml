@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="customService" class="com.mtsmda.springCore.InitializingBeanAndDisposableBean.CustomService">
+        <property name="message" value="This is message!"/>
+    </bean>
+
+    <bean id="initAndDestroyXML" class="com.mtsmda.springCore.InitializingBeanAndDisposableBean.InitAndDestroyXML"
+          init-method="initM" destroy-method="cleanUp">
+        <property name="message" value="This is SECOND message!"/>
+    </bean>
+
+    <bean id="annotationVariant" class="com.mtsmda.springCore.InitializingBeanAndDisposableBean.AnnotationVariant"
+          init-method="initMA" destroy-method="destroyMA">
+        <property name="message" value="This is THIRD message!"/>
+    </bean>
+
+</beans>

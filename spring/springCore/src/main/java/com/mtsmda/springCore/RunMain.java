@@ -1,5 +1,8 @@
 package com.mtsmda.springCore;
 
+import com.mtsmda.springCore.InitializingBeanAndDisposableBean.AnnotationVariant;
+import com.mtsmda.springCore.InitializingBeanAndDisposableBean.CustomService;
+import com.mtsmda.springCore.InitializingBeanAndDisposableBean.InitAndDestroyXML;
 import com.mtsmda.springCore.beanScopes.Message;
 import com.mtsmda.springCore.beanScopes.ScopeBean;
 import com.mtsmda.springCore.collections.ExampleListFactoryBean;
@@ -10,7 +13,9 @@ import com.mtsmda.springCore.dateInject.ExampleDate;
 import com.mtsmda.springCore.di.FileOutputGenerator;
 import com.mtsmda.springCore.di.JSONOutputGenerator;
 import com.mtsmda.springCore.inheritance.Player;
+import com.mtsmda.springCore.mandatory.MandatoryClass;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
@@ -75,6 +80,11 @@ public class RunMain {
         System.out.println(bean);
         /*bean = applicationContext.getBean("general", Player.class);
         System.out.println(bean);   Error creating bean with name 'general': Bean definition is abstract*/
+
+        //mandatory
+        /*System.out.println(applicationContext.getBean("mandatoryClass", MandatoryClass.class).toString());//Caused by: org.springframework.beans.factory.BeanInitializationException: Property 'color' is required for bean 'mandatoryClass'*/
+
+        configurableApplicationContext();
     }
 
 
@@ -118,12 +128,26 @@ public class RunMain {
         System.out.println("---------------------------------");
     }
 
-    private static void date(ApplicationContext applicationContext){
+    private static void date(ApplicationContext applicationContext) {
         System.out.println("---------------date------------------");
         ExampleDate exampleDate = applicationContext.getBean("exampleDate", ExampleDate.class);
         System.out.println(exampleDate.getDate());
         /*ExampleDate customDateEditor = applicationContext.getBean("exampleDate2", ExampleDate.class);
         System.out.println(customDateEditor.getDate());*/
+        System.out.println("---------------------------------");
+    }
+
+    private static void configurableApplicationContext() {
+        System.out.println("---------------configurableApplicationContext------------------");
+        String[] s = new String[]{"spring/InitializingBeanAndDisposableBean/springBeansInitDispose.xml"};
+        ConfigurableApplicationContext configurableApplicationContext = new ClassPathXmlApplicationContext(s);
+        System.out.println(configurableApplicationContext.getBean("customService", CustomService.class).getMessage());
+
+        System.out.println(configurableApplicationContext.getBean("initAndDestroyXML", InitAndDestroyXML.class).getMessage());
+
+        System.out.println(configurableApplicationContext.getBean("annotationVariant", AnnotationVariant.class).getMessage());
+
+        configurableApplicationContext.close();
         System.out.println("---------------------------------");
     }
 

@@ -27,4 +27,12 @@
         </property>
     </bean>-->
 
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor">
+        <property name="requiredAnnotationType" value="com.mtsmda.springCore.mandatory.Mandatory"/>
+    </bean>
+
+   <!-- <bean id="mandatoryClass" class="com.mtsmda.springCore.mandatory.MandatoryClass">
+        <property name="r" value="255"/>
+    </bean>-->
+
 </beans>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.mtsmda.springCore.SpEL"/>
+    
+    <import resource="../collections/springCollections.xml"/>
+
+    <bean id="modelAutoAudi100" class="com.mtsmda.springCore.SpEL.ModelAuto">
+        <property name="idModelAuto" value="15"/>
+        <property name="marka" value="Audi"/>
+        <property name="model" value="100"/>
+    </bean>
+
+    <bean id="carAudi100" class="com.mtsmda.springCore.SpEL.Car">
+        <property name="modelAuto" value="#{modelAutoAudi100}"/>
+        <property name="id" value="#{modelAutoAudi100.idModelAuto + 5}"/>
+    </bean>
+
+
+    <bean id="helloBean2" class="com.mtsmda.springCore.SpEL.referenceBean.HelloBean">
+        <property name="message" value="This message from xml conf spring file"/>
+        <property name="name" value="John"/>
+        <property name="age" value="36"/>
+        <property name="sayHello" value="#{tellBean9.sayHello(helloBean2.message)}"/>
+        <property name="myInformation" value="#{tellBean9.information(helloBean2.name, helloBean2.age, 350, 'cat')}"/>
+        <property name="aDouble100" value="#{tellBean9.get100(9)}"/>
+    </bean>
+
+    <bean id="tellBean9" class="com.mtsmda.springCore.SpEL.referenceBean.TellBean"/>
+
+    <bean id="javaOperatorsXML" class="com.mtsmda.springCore.SpEL.JavaOperators">
+        <property name="lessThan" value="#{1 lt 4}"/>
+        <property name="lessEquals" value="#{2 le 5}"/>
+        <property name="arbitrary" value="#{tellBean9.sayHello('OOO').length() > 90 ? 'more than 90 symbols' : 'less than 90!'}"/>
+    </bean>
+
+</beans>
