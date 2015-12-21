@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mm:computer xmlns:mm="http://www.mtsmda.com" manufacturer="Sony">
+    <mm:volumeHDD>1024</mm:volumeHDD>
+    <mm:gram>false</mm:gram>
+</mm:computer>

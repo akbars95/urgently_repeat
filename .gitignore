@@ -10,3 +10,4 @@ surefire-reports
 classes
 maven-archiver
 target
+out

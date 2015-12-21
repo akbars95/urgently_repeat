@@ -2,7 +2,7 @@
 <mapping>
     <class name="com.mtsmda.springCore.OXM.Computer">
 
-        <map-to xml="computer"/>
+        <map-to xml="computer" ns-uri="http://www.mtsmda.com" ns-prefix="mm"/>
 
         <field name="manufacturer" type="string">
             <bind-xml name="manufacturer" node="attribute"/>
