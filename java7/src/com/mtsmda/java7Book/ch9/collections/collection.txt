@@ -1,0 +1,5 @@
+Collections come in four basic flavors:
+■ Lists Lists of things (classes that implement List)
+■ Sets Unique things (classes that implement Set)
+■ Maps Things with a unique ID (classes that implement Map)
+■ Queues Things arranged by the order in which they are to be processed
