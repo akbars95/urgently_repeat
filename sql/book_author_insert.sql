@@ -1,0 +1,12 @@
+use op9_9;
+INSERT INTO book_author(book_id, author_id) VALUES('69EB6125-9D88-49ED-BEAF-CC132B28A024', 1);
+INSERT INTO book_author(book_id, author_id) VALUES('C83A6712-A497-460D-9E33-4C47531DCBE7', 2);
+INSERT INTO book_author(book_id, author_id) VALUES('C1EFC4FB-57BD-4934-B1E7-C9366D424938', 3);
+
+INSERT INTO book_author(book_id, author_id) VALUES('0326E609-EA83-4CAC-8066-9E2933FAA07B', 4);
+INSERT INTO book_author(book_id, author_id) VALUES('0326E609-EA83-4CAC-8066-9E2933FAA07B', 5);
+INSERT INTO book_author(book_id, author_id) VALUES('0326E609-EA83-4CAC-8066-9E2933FAA07B', 6);
+
+INSERT INTO book_author(book_id, author_id) VALUES('6664F5C0-9E87-4B0E-8892-98372B475BA7', 4);
+INSERT INTO book_author(book_id, author_id) VALUES('6664F5C0-9E87-4B0E-8892-98372B475BA7', 5);
+INSERT INTO book_author(book_id, author_id) VALUES('6664F5C0-9E87-4B0E-8892-98372B475BA7', 6);

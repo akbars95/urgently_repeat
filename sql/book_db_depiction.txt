@@ -1,0 +1,62 @@
+Book database
+
+10)books
+	book_id
+	book_name
+	book_isbn
+	book_count_of_pages
+	book_file_format_id
+	book_publish_year
+	book_publisher_id
+	book_file_size
+	book_language_id
+	book_subcategory_id
+	
+11)book_author
+	book_id
+	author_id
+	
+8)authors
+	author_id
+	author_firstname
+	author_lastname
+	author_country_id
+	
+6)countries
+	country_id
+	country_name
+	
+7)cities
+	city_id
+	city_name
+	city_country_id
+	
+5)file_formats
+	file_format_id
+	file_format_name
+	
+9)publishers
+	publisher_id
+	publisher_name
+	publisher_city_id
+	
+3)book_categories
+	book_category_id
+	book_category_name
+	
+4)book_subcategories
+	book_subcategory_id
+	book_category_id
+	book_subcategory_name
+	
+2)tags
+	tag_id
+	tag_name
+		
+12)book_tags
+	book_id
+	book_tag_id
+	
+1)languages
+	language_id
+	language
