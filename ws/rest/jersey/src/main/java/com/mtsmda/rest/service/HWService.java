@@ -12,10 +12,16 @@ import javax.ws.rs.core.Response;
 public class HWService {
 
     @GET
+    @Path(value = "/")
+    public Response hello() {
+        return Response.status(200).entity("Hello, friend!").build();
+    }
+
+    @GET
     @Path(value = "/{param}")
     public Response getMsg(@PathParam("param") String message) {
-        String out = "Hello! Here is yuor message - ' " + message + "'";
-        return Response.status(200).entity(message).build();
+        String out = "Hello! Here is your message - ' " + message + "'";
+        return Response.status(200).entity(out).build();
     }
 
 }
