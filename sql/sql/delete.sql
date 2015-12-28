@@ -1,0 +1,1 @@
+DELETE from [op9_9].[dbo].[book_tags] WHERE book_id = 'C83A6712-A497-460D-9E33-4C47531DCBE7';
