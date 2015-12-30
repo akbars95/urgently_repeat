@@ -7,6 +7,12 @@ import java.util.Set;
 /**
  * Created by c-DMITMINZ on 21.12.2015.
  */
+@NamedQueries({
+        @NamedQuery(name = "findAllCategories", query = "from Category")
+})
+@NamedNativeQueries(
+        @NamedNativeQuery(name = "categories", query = "select * from categories where category_id = :category_id", resultClass = Category.class)
+)
 @Entity
 @Table(name = "categories")
 public class Category {

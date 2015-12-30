@@ -81,7 +81,15 @@ public class Author implements Serializable {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + firstname.hashCode();
         result = 31 * result + lastname.hashCode();
-        result = 31 * result + bookAuthors.hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                '}';
     }
 }

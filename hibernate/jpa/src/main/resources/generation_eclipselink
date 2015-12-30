@@ -1,0 +1,13 @@
+create-tables       EclipseLink will attempt to execute a CREATE TABLE SQL for each table.
+
+                     If the table already exists, EclipseLink will follow the default behavior of your specific database and JDBC driver combination (when a CREATE TABLE SQL is issued for an already existing table). In most cases an exception is thrown and the table is not created; the existing table will be used. EclipseLink will then continue with the next statement.
+
+
+create-or-extend-tables     EclipseLink will attempt to create tables. If the table exists, EclipseLink will add any missing columns
+drop-and-create-tables      EclipseLink will attempt to DROP all tables, then CREATE all tables. If any issues are encountered, EclipseLink will follow the default behavior of your specific database and JDBC driver combination, then continue with the next statement
+
+                            This is useful in development if the schema frequently changes or during testing when the existing data needs to be cleared.
+
+                            Note: Using drop-and-create will remove all of the data in the tables when they are dropped. You should never use option on a production schema that has valuable data in the database. If the schema changed dramatically, there could be old constraints in the database that prevent the dropping of the old tables. This may require the old schema to be dropped through another mechanism
+
+none                        (Default) No DDL generated; no schema generated.
