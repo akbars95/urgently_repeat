@@ -23,6 +23,8 @@ public class GenericsMix {
         List<Integer> integers = new ArrayList<>();
         integers.add(new Integer(19));
         list(integers);
+        System.out.println(integers.size());
+        System.out.println(integers.get(2));
 
     }
 
