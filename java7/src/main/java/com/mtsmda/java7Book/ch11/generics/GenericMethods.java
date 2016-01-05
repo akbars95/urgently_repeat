@@ -1,10 +1,12 @@
 package com.mtsmda.java7Book.ch11.generics;
 
 import com.mtsmda.java7Book.ch11.generics.model.Animal;
+import com.mtsmda.java7Book.ch11.generics.model.Bird;
 import com.mtsmda.java7Book.ch11.generics.model.Cat;
 import com.mtsmda.java7Book.ch11.generics.model.Dog;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -31,6 +33,25 @@ public class GenericMethods {
 //        listAnimal(dogs);
         System.out.println("wildcard---------------------------");
         listAnimals(animalList);
+
+        List<Animal> animalList1 = Arrays.asList(new Bird(), new Cat(), new Dog(), new Animal() {
+            @Override
+            public void checkup() {
+                System.out.println(this.getClass().getCanonicalName() + " - Animal");
+            }
+        });
+
+        System.out.println("*********************");
+        listAnimals(animalList1);
+
+        listDogs(animalList);
+
+    }
+
+    private static void listDogs(List<? super Dog> dogs){
+        /*for (Dog dog : dogs){
+
+        }*/
     }
 
     private static void listAnimals(List<? extends Animal> animals) {

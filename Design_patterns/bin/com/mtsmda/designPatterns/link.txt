@@ -1,0 +1,2 @@
+http://www.javatpoint.com/decorator-pattern
+http://www.journaldev.com/1827/java-design-patterns-example-tutorial
