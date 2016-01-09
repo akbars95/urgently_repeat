@@ -2,7 +2,9 @@ package com.mtsmda.java7Book.ch11.generics;
 
 import com.mtsmda.java7Book.ch11.generics.model.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -24,6 +26,38 @@ public class GenericMethods2 {
         listSuperDogs(dogList);
 //        listSuperDogs(catalanSheepdogDogs);
 //        listSuperDogs(integers);
+
+        /*Collections.synchronizedList()*/
+        List<Animal> animals = Arrays.asList(new Cat(), new Dog(), new Bird());
+        List<Dog> dogs = Arrays.asList(new Dog(), new SouthRussianOvcharkaDod(), new GermanShepherdDog());
+
+//        listDogs(animals);
+//        listDogs(new ArrayList<Bird>());
+        listDogs(dogs);
+
+        listSuperDogs(animals);
+        listSuperDogs(dogs);
+//        listSuperDogs(new ArrayList<Bird>());
+        listSuperDogs(new ArrayList<Object>());
+//        listSuperDogs(new Object());
+
+        allList(animals);
+        allList(dogs);
+
+//        allObjects(animals);
+//        allObjects(dogs);
+
+    }
+
+    private static void allObjects(List<Object> objects){
+        System.out.println("---------------------------------allObjects");
+    }
+
+    private static void allList(List<?> objects) {
+        System.out.println("---------------------------------all");
+        for(Object o : objects){
+            System.out.println(o);
+        }
     }
 
     /**
@@ -43,6 +77,7 @@ public class GenericMethods2 {
 
     /**
      * all classes is a Dog and All superClasses of Dog
+     * Dog, Animal, Object
      */
     private static void listSuperDogs(List<? super Dog> list) {
         for (Object o : list) {
