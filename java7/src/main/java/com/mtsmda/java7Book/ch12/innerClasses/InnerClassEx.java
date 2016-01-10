@@ -18,11 +18,19 @@ public class InnerClassEx {
 
 class ClassOuter {
 
+    private int x = 7;
+
     public class ClassInner {
 
+        private int x = 9;
+
         void print() {
-            System.out.println("inner");
+            System.out.println("inner, outer class x = " + ClassOuter.this.x + " inner class x = " + this.x);
         }
+
+        /*public static void hello(){
+
+        }*/
 
     }
 

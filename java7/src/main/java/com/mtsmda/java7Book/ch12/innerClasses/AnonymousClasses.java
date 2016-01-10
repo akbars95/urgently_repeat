@@ -11,6 +11,17 @@ public class AnonymousClasses {
         popcorn.getPopcorn();
 
         vneshnii.cookable.cook("Ivan");
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("RUN!");
+            }
+        };
+        runnable.run();
+
+        System.out.println("----------------");
+        vneshnii.go();
     }
 
 }
@@ -42,12 +53,31 @@ class Vneshnii {
         }
     };
 
+
+    void go() {
+        new Popcorn().name("");
+        new Popcorn().cook(new Cookable() {
+            @Override
+            public void cook(String name) {
+                System.out.println("go - popcorn cook hello!");
+            }
+        }, "Hello");
+    }
+
 }
 
 class Popcorn {
 
     public void getPopcorn() {
         System.out.println("take popcorn!");
+    }
+
+    public void name(String name) {
+        System.out.println("popcorn manufacturer name is " + name);
+    }
+
+    public void cook(Cookable cookable, String cook) {
+        cookable.cook(cook);
     }
 
 }

@@ -8,6 +8,7 @@ public class InnerMethodClass {
     public static void main(String[] args) {
         Out out = new Out();
         out.doStuff();
+        Out.goStatic();
     }
 
 }
@@ -15,14 +16,44 @@ public class InnerMethodClass {
 
 class Out {
 
+    private double d = 19.96;
+    private static boolean b = true;
+
     public void doStuff() {
-        class In {
+        final String s = "some text";
+
+        /*public */abstract class In {
             public void go() {
-                System.out.println("go in inner class");
+                System.out.println("go in inner class d - " + d + "\tb = " + Out.b + "\t s = " + s);
+            }
+
+            /*public static void he(){
+
+            }*/
+        }
+
+        final class InFinal{
+            public void goFinal(){
+                System.out.println("In go final");
             }
         }
-        In in = new In();
+
+        In in = new In(){
+
+        };
         in.go();
+
+        new InFinal().goFinal();
+    }
+
+    public static void goStatic(){
+        class InStatic{
+            public void d(){
+                System.out.println("this is d method!");
+            }
+        }
+
+        new InStatic().d();
     }
 
 }
