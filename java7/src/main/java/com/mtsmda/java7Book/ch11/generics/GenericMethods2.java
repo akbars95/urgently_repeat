@@ -2,6 +2,9 @@ package com.mtsmda.java7Book.ch11.generics;
 
 import com.mtsmda.java7Book.ch11.generics.model.*;
 
+import javax.swing.*;
+import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -26,6 +29,10 @@ public class GenericMethods2 {
         listSuperDogs(dogList);
 //        listSuperDogs(catalanSheepdogDogs);
 //        listSuperDogs(integers);
+        listSuperDogs(new ArrayList<Object>());
+        listSuperDogs(new ArrayList<Dog>());
+        listSuperDogs(new ArrayList<Animal>());
+//        listSuperDogs(new ArrayList<Bird>());
 
         /*Collections.synchronizedList()*/
         List<Animal> animals = Arrays.asList(new Cat(), new Dog(), new Bird());
@@ -44,17 +51,54 @@ public class GenericMethods2 {
         allList(animals);
         allList(dogs);
 
+        List<Object> objects = new ArrayList<>();
+        objects.add(new BigInteger("19"));
+        objects.add(new Object());
+        allList(objects);
+        allList(new ArrayList<Object>());
+        allList(new ArrayList<JButton>());
+
 //        allObjects(animals);
 //        allObjects(dogs);
+        allObjects(new ArrayList<Object>());
+//        allObjects(new ArrayList<String>());
 
+
+        animals(new ArrayList<Animal>());
+//        animals(new ArrayList<Dog>());
+
+        dogs(new ArrayList<Dog>());
+//        dogs(new ArrayList<SouthRussianOvcharkaDod>());
     }
 
+    private static void dogs(List<Dog> dogs){
+        dogs.add(new Dog());
+//        dogs.add(new Animal());
+//        dogs.add(new Bird());
+        dogs.add(new SouthRussianOvcharkaDod());
+        dogs.add(new CatalanSheepdogDog());
+    }
+
+    private static void animals(List<Animal> animals){
+        animals.add(new Bird());
+        animals.add(new Cat());
+    }
+
+    /**
+     * only object class types
+     * */
     private static void allObjects(List<Object> objects){
-        System.out.println("---------------------------------allObjects");
+        objects.add(new BigInteger("19"));
+        objects.add(new Integer(15));
+        System.out.println("---------------------------------only Objects");
     }
 
+    /**
+     * all types
+     * */
     private static void allList(List<?> objects) {
-        System.out.println("---------------------------------all");
+//        objects.add(new BigInteger("95"));
+        System.out.println("---------------------------------all types");
         for(Object o : objects){
             System.out.println(o);
         }
@@ -65,9 +109,11 @@ public class GenericMethods2 {
      * Animals(Dog, Cat, Bird)
      * Dogs(CatalanSheepdogDog, GermanShepherdDog, SouthRussianOvcharkaDod)
      * <p>
-     * all classes which is a dog or subClasses of Dog
+     * all classes which is a dog or subClasses of Dog, CatalanSheepdogDog, GermanShepherdDog, SouthRussianOvcharkaDod
      */
     private static void listDogs(List<? extends Dog> dogs) {
+//        dogs.add(new CatalanSheepdogDog());
+//        dogs.add(new Dog());
         for (Dog dog : dogs) {
             System.out.println(dog.getClass().getCanonicalName());
         }
@@ -80,6 +126,8 @@ public class GenericMethods2 {
      * Dog, Animal, Object
      */
     private static void listSuperDogs(List<? super Dog> list) {
+//        list.add(new Dog());
+//        list.add(new CatalanSheepdogDog());
         for (Object o : list) {
             System.out.println(o.getClass().getCanonicalName());
         }
