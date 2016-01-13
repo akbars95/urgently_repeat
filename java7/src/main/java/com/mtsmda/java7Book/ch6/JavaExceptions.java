@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * Created by c-DMITMINZ on 09.12.2015.
@@ -11,6 +12,8 @@ import java.io.IOException;
 public class JavaExceptions {
 
     public static void main(String[] args) {
+        multiplyExceptions();
+
 //        error();
         error2();
         int i = 1000;
@@ -59,6 +62,7 @@ public class JavaExceptions {
         }
 
 
+
     }
 
     private static void error() {
@@ -71,6 +75,28 @@ public class JavaExceptions {
         } catch (Error e) {
             throw e;
         }
+    }
+
+    private static void multiplyExceptions(){
+        try {
+            double result = 15 / 0;
+        } catch (IndexOutOfBoundsException | ArithmeticException e) {
+            System.out.println("multiplyExceptions - " + e.getMessage());
+        }
+
+        try{
+            if(true){
+                throw new SQLException();
+            }
+            throw new IOException();
+        }
+        catch (RuntimeException | IOException | SQLException e){
+
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
 }

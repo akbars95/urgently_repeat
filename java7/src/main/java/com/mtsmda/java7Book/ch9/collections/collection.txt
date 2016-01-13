@@ -3,3 +3,11 @@ Collections come in four basic flavors:
 ■ Sets Unique things (classes that implement Set)
 ■ Maps Things with a unique ID (classes that implement Map)
 ■ Queues Things arranged by the order in which they are to be processed
+
+Principal features of non-primary implementations:
+
+    HashMap has slightly better performance than LinkedHashMap, but its iteration order is undefined
+    HashSet has slightly better performance than LinkedHashSet, but its iteration order is undefined
+    TreeSet is ordered and sorted, but slower
+    TreeMap is ordered and sorted, but slower
+    LinkedList has fast adding to the start of the list, and fast deletion from the interior via iteration
