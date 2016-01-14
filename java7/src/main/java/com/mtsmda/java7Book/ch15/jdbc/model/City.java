@@ -13,4 +13,35 @@ public class City {
     private Country country;
     private List<FootballClub> footballClubs = new ArrayList<>();
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    public List<FootballClub> getFootballClubs() {
+        return footballClubs;
+    }
+
+    public void setFootballClubs(List<FootballClub> footballClubs) {
+        this.footballClubs = footballClubs;
+    }
 }

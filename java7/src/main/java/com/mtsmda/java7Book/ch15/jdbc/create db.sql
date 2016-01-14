@@ -1,3 +1,5 @@
+//MYSQL
+
 create DATABASE football;
 
 CREATE TABLE `countries` (
@@ -36,3 +38,72 @@ CREATE TABLE `f_player` (
   KEY `fc_id` (`fc_id`),
   CONSTRAINT `f_player_ibfk_1` FOREIGN KEY (`fc_id`) REFERENCES `football_club` (`fc_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+//POSTGRESQL
+
+CREATE TABLE countries
+(
+  country_id serial NOT NULL,
+  country_name character varying(100),
+  CONSTRAINT countries_pkey PRIMARY KEY (country_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE countries
+  OWNER TO "jdbcExample";
+
+
+CREATE TABLE cities
+(
+  city_id serial NOT NULL,
+  city_name character varying(100),
+  country_id integer,
+  CONSTRAINT cities_pkey PRIMARY KEY (city_id),
+  CONSTRAINT cities_country_id_fkey FOREIGN KEY (country_id)
+      REFERENCES countries (country_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE cities
+  OWNER TO "jdbcExample";
+
+
+
+CREATE TABLE football_club
+(
+  fc_id serial NOT NULL,
+  fc_name character varying(100),
+  fc_city_id integer,
+  CONSTRAINT football_club_pkey PRIMARY KEY (fc_id),
+  CONSTRAINT football_club_fc_city_id_fkey FOREIGN KEY (fc_city_id)
+      REFERENCES cities (city_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE football_club
+  OWNER TO "jdbcExample";
+
+
+
+CREATE TABLE f_player
+(
+  fp_id serial NOT NULL,
+  fp_lastname character varying,
+  fp_firstname character varying,
+  fc_id integer,
+  CONSTRAINT f_player_pkey PRIMARY KEY (fp_id),
+  CONSTRAINT f_player_fc_id_fkey FOREIGN KEY (fc_id)
+      REFERENCES football_club (fc_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE f_player
+  OWNER TO "jdbcExample";
