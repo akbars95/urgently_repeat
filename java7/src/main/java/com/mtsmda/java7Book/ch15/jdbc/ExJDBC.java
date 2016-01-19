@@ -10,7 +10,7 @@ import java.sql.Statement;
 public class ExJDBC {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        Connection connection = DBConnection.getConnection(DBConnection.DB.POSTGRESQL);
+        Connection connection = DBConnection.getConnection(DBConnection.DB.MYSQL);
         System.out.println(connection != null);
         if (connection != null) {
             Statement statement = connection.createStatement();

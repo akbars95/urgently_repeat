@@ -1,0 +1,7 @@
+english_word
+	english_word_id
+	english_word
+	
+	
+russian_word
+	

@@ -8,9 +8,11 @@ public class Autoboxing {
     public static void main(String[] args) {
         int c = 15;
         Integer g = new Integer(19);
+        Integer cg = 25;
 
         setInt(c);
         setInt(g);
+        setInt(cg);
     }
 
     private static void setInt(int c) {

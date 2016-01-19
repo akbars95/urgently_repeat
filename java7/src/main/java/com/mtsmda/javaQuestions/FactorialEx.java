@@ -4,7 +4,9 @@ package com.mtsmda.javaQuestions;
  * Created by c-DMITMINZ on 14.01.2016.
  */
 public class FactorialEx {
-
+/**
+ * https://www.youtube.com/watch?v=neuDuf_i8Sg
+ * */
     public static void main(String[] args) {
         System.out.println(factorialRec(5));
         System.out.println(factorialRec(1));

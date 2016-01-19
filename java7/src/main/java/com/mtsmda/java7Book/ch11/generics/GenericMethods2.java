@@ -69,9 +69,16 @@ public class GenericMethods2 {
 
         dogs(new ArrayList<Dog>());
 //        dogs(new ArrayList<SouthRussianOvcharkaDod>());
+
+        list(animals);
+        list(objects);
+        list(new ArrayList<Object>());
+        list(new ArrayList<String>());
+        list(new ArrayList<Animal>());
+        list(new ArrayList<Dog>());
     }
 
-    private static void dogs(List<Dog> dogs){
+    private static void dogs(List<Dog> dogs) {
         dogs.add(new Dog());
 //        dogs.add(new Animal());
 //        dogs.add(new Bird());
@@ -79,15 +86,15 @@ public class GenericMethods2 {
         dogs.add(new CatalanSheepdogDog());
     }
 
-    private static void animals(List<Animal> animals){
+    private static void animals(List<Animal> animals) {
         animals.add(new Bird());
         animals.add(new Cat());
     }
 
     /**
      * only object class types
-     * */
-    private static void allObjects(List<Object> objects){
+     */
+    private static void allObjects(List<Object> objects) {
         objects.add(new BigInteger("19"));
         objects.add(new Integer(15));
         System.out.println("---------------------------------only Objects");
@@ -95,11 +102,11 @@ public class GenericMethods2 {
 
     /**
      * all types
-     * */
+     */
     private static void allList(List<?> objects) {
 //        objects.add(new BigInteger("95"));
         System.out.println("---------------------------------all types");
-        for(Object o : objects){
+        for (Object o : objects) {
             System.out.println(o);
         }
     }
@@ -132,6 +139,14 @@ public class GenericMethods2 {
             System.out.println(o.getClass().getCanonicalName());
         }
         System.out.println("----------------------------------");
+    }
+
+    /**
+     * all types
+     */
+    private static <T> void list(List<T> ts) {
+        System.out.println("*************************Here");
+        System.out.println(ts.size() + " " + ((ts != null && !ts.isEmpty() && ts.get(0) != null) ? ts.get(0).getClass().getCanonicalName() : ""));
     }
 
 }

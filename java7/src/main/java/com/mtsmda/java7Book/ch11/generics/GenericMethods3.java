@@ -28,6 +28,8 @@ public class GenericMethods3 {
     }
 
     private static <T> T getObject(List<T> tList, int index) {
+        System.out.println(tList.get(1).getClass().isAssignableFrom(Dog.class));
+        System.out.println(tList.get(0).getClass().isInstance(Dog.class));
         return tList.get(index);
     }
 

@@ -9,6 +9,7 @@ public class RunMain {
         Country country = new Country();
         City city = new City();
 //        City city1 = (City)country;
+//        city1.get();
 
         Country country1 = new City();
         System.out.println(country1.get());
