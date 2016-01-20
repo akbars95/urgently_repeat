@@ -1,7 +1,25 @@
 english_word
 	english_word_id
 	english_word
-	
+	word_part_of_speech_id
 	
 russian_word
+	russian_word_id
+	russian_word
+	word_part_of_speech_id
+	
+translate
+	russian_word_id
+	english_word_id
+	
+word_part_of_speech
+	word_part_of_speech_id
+	word_part_of_speech_name_eng
+	word_part_of_speech_name_rus
+	
+english_irregular_verb
+	english_irregular_verb_id
+	english_word_infinitive_id
+	english_irregular_verb_simple_past
+	english_irregular_verb_past_participle
 	
