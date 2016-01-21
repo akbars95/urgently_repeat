@@ -9,7 +9,7 @@ import java.sql.SQLException;
  */
 public class DBConnection {
 
-    private static String dbName = "football";
+    private static String dbName = "english_quiz";
     private static String urlMYSQL = "jdbc:mysql://localhost:3306/" + dbName;
     private static String urlPOSTGRESQL = "jdbc:postgresql://localhost:5432/" + dbName;
     private static String username = "root";
