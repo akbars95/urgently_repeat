@@ -54,9 +54,11 @@ public class ExJDBC {
 
         connection.commit();
 
-        resultSet.close();
-        statement.close();
+//        resultSet.close();
+//        statement.close();
         connection.close();
+        System.out.println("resultSet - " + resultSet.isClosed());
+        System.out.println("statement - " + statement.isClosed());
     }
 
 }

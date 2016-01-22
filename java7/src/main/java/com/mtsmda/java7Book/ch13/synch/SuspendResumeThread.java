@@ -9,7 +9,7 @@ public class SuspendResumeThread {
         NewThread newThread = new NewThread("Thread#1");
         NewThread newThread2 = new NewThread("Thread#2");
 
-        try{
+        try {
             Thread.sleep(1000);
             newThread.mySuspend();
             System.out.println(newThread.name + " suspend");
@@ -25,16 +25,14 @@ public class SuspendResumeThread {
             Thread.sleep(1000);
             newThread2.myResume();
             System.out.println(newThread2.name + " resume");
-        }
-        catch (InterruptedException e){
+        } catch (InterruptedException e) {
 
         }
 
-        try{
+        try {
             newThread.thread.join();
             newThread2.thread.join();
-        }
-        catch (InterruptedException e){
+        } catch (InterruptedException e) {
 
         }
         System.out.println("Main thread is finished");
@@ -42,7 +40,7 @@ public class SuspendResumeThread {
 
 }
 
-class NewThread implements Runnable{
+class NewThread implements Runnable {
 
     String name;
     Thread thread;
@@ -58,28 +56,27 @@ class NewThread implements Runnable{
 
     @Override
     public void run() {
-        try{
-            for (int i = 25; i >= 0; i--){
+        try {
+            for (int i = 25; i >= 0; i--) {
                 System.out.println(Thread.currentThread().getName() + " #" + i);
                 Thread.sleep(250);
-                synchronized (this){
-                    while (suspendFlag){
+                synchronized (this) {
+                    while (suspendFlag) {
                         wait();
                     }
                 }
             }
-        }
-        catch (InterruptedException e){
+        } catch (InterruptedException e) {
 
         }
         System.out.println("Finished - " + name);
     }
 
-    synchronized void mySuspend(){
+    synchronized void mySuspend() {
         suspendFlag = true;
     }
 
-    synchronized void myResume(){
+    synchronized void myResume() {
         suspendFlag = false;
         notify();
     }

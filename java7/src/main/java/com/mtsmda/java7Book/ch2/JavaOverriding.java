@@ -23,6 +23,38 @@ public class JavaOverriding {
         SuperClass.print(19.3);
         SubClass.print(15.);
 
+        System.out.println("------------------------------------------");
+        array(new Integer[]{19, 25});
+        array(new int[]{19, 25});
+        integ(19);
+        integ(new Integer(1932));
+//        integ(19, 158);
+//        integ(new Integer(1932), new Integer(2156));
+
+    }
+
+    private static void array(Integer ... integers){
+        System.out.println("Integer ... integers");
+    }
+
+    private static void array(int[] integers){
+        System.out.println("int[] integers");
+    }
+
+    private static void integ(int integer){
+        System.out.println("int integer");
+    }
+
+    private static void integ(Integer integer){
+        System.out.println("Integer integer");
+    }
+
+    private static void integ(Integer ... integers){
+        System.out.println("Integer ... integers");
+    }
+
+    private static void integ(int ... integers){
+        System.out.println("int ... integers");
     }
 
 }
