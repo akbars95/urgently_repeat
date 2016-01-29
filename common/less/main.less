@@ -1,0 +1,42 @@
+@color-base: #2d5e8b;
+.class1 {
+  background-color: @color-base;
+  .class2 {
+    background-color: #fff;
+    color: @color-base;
+  }
+}
+
+
+
+@base_color1white: white;
+@base_color2black: black;
+@base_color3orange: orange;
+
+
+
+
+//
+@header_height: 50px;
+
+body{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid @base_color1white;
+}
+
+.container{
+  //background-color: @base_color3orange;
+  //height: 1000px;
+}
+
+#header{
+  padding-top: 15px;
+  height: @header_height;
+  border: 1px solid @base_color1white;
+}
+
+#site_menu{
+  border-bottom: 2px solid @base_color1white;
+}
